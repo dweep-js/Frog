@@ -1,0 +1,99 @@
+body {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    font-family: "Poppins", sans-serif; /* Use Poppins font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#Game-container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#play-button {
+    background-color: #1e88e5; /* Primary color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#play-button:hover {
+    background-color: #1976d2; /* Darker shade on hover */
+}
+
+label {
+    margin: 10px 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px; /* Space between boxes */
+    margin-top: 20px;
+}
+
+.gift-box {
+    position: relative;
+    width: 75px; /* Set width */
+    height: 75px; /* Set height */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: opacity 0.3s ease-out; /* Fade transition */
+}
+
+.box-head {
+    border-bottom: 4px solid gold; /* Colored top border */
+    width: 100%; /* Full width */
+    height: 30%; /* Height for the lid */
+    background-color: #1e88e5; /* Primary color */
+    display: flex; /* Enable flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow: hidden; /* Hide overflow for smooth animation */
+}
+
+.box-below {
+    width: 83%; /* Fixed width */
+    height: 70%; /* Height for the body */
+    background-color: #ff6f61; /* Secondary color */
+    display: flex; /* Enable flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: auto; /* Center this box horizontally */
+    opacity: 1; /* Start fully visible */
+    transition: opacity 0.3s ease-out; /* Animation for fading */
+}
+
+.frog-icon {
+    width: 50%; /* Adjust as necessary */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the icon is centered */
+    margin: 0 auto; /* Center the icon horizontally */
+    transform: translateY(100%); /* Start below the box */
+    transition: transform 0.5s ease; /* Animate the transform property */
+    display: none; /* Initially hide the frog */
+}
+
+.gift-box.open .frog-icon {
+    display: block; /* Show frog when box is opened */
+    transform: translateY(0); /* Move to its original position */
+}
+
+.fade-out {
+    opacity: 0; /* Fade out */
+    pointer-events: none; /* Disable pointer events when faded out */
+}
+
+.open .box-head {
+    height: 0; /* Collapse lid when opened */
+    border: 0;
+}
